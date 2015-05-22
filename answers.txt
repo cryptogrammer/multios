@@ -1,0 +1,70 @@
+CS 2200 Fall 2014
+Project 4
+Name:Utkarsh Garg
+GT Number:902904045
+
+Problem 1B
+----------
+
+./os-sim 1
+# of Context Switches: 99
+Total execution time: 67.6 s
+Total time spent in READY state: 390.0 s
+
+./os-sim 2
+# of Context Switches: 113
+Total execution time: 35.8 s
+Total time spent in READY state: 83.2 s
+
+
+./os-sim 4
+# of Context Switches: 183
+Total execution time: 33.8 s
+Total time spent in READY state: 0.5 s
+
+As the number of CPUs increases, execution time decreases and the time spent in the READY state decreases exponentially. The execution time decreases exponentially when the number of cores is increased from 1 to 2, but when the number of cores is doubled again, the execution time does not decrease much because of the extra unrequited cores and hence the extra idle time.
+
+
+Problem 2B
+----------
+
+800 ms ./os-sim 1 -r 8
+# of Context Switches: 136
+Total execution time: 67.6 s
+Total time spent in READY state: 228.8 s
+
+600 ms ./os-sim 1 -r 6
+# of Context Switches: 161
+Total execution time: 67.6 s
+Total time spent in READY state: 182.0 s
+
+400 ms ./os-sim 1 -r 4
+# of Context Switches: 203
+Total execution time: 67.6 s
+Total time spent in READY state: 134.5 s
+
+
+200 ms ./os-sim 1 -r 2
+# of Context Switches: 362
+Total execution time: 67.5 s
+Total time spent in READY state: 71.3 s
+
+The total waiting time decreases with shorter time slices. The execution time stayed the same because the number of context switches increases. The shortest time slice is not the best choice because it increases context switches, cache misses and thus the overhead, slowing it down.
+
+Problem 3B
+----------
+
+./os-sim 1
+# of Context Switches: 99
+Total execution time: 67.6 s
+Total time spent in READY state: 389.9 s
+
+./os-sim 1 -r 8
+# of Context Switches: 136
+Total execution time: 67.7 s
+Total time spent in READY state: 232.3 s
+
+./os-sim 1 -p
+SEG FAULT
+
+The priority scheduling algorithm is the closest approximation of SJF in the algorithms implemented. In this case the priorities probably closely resemble an SJF priority (lower execution times more priority). My priority algorithm does not run completely, my answer is based off someone else’s statistics for the last algorithm.
